@@ -1,0 +1,214 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;500;700&display=swap');
+
+//primary colors
+$DarkBlue: hsl(240, 38%, 20%);
+$GrayishBlue: hsl(240, 18%, 77%);
+$white: white;
+//font
+$fontFamily: 'Inter', sans-serif;
+$fontS: 16px;
+$fontXL: 28px;
+$font300: 300;
+$font500: 500;
+$font700: 700;
+
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    height: 100vh;
+    font-family: $fontFamily;
+    background-color: $white;
+    background: url(/assets/images/pattern-bg.svg) no-repeat center right 100px,
+    url(/assets/images/pattern-curve.svg) no-repeat bottom left;
+}
+
+
+.testimonials {
+    position: relative;
+    order: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    max-width: 1100px;
+    height: auto;
+    &__content{
+        display: flex;
+        order: 1;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+        z-index: 1;
+        width: 100%;
+        height: auto;
+        padding: 4em 0;
+        top: 50%;
+        left: 0;
+        background: url(/assets/images/pattern-quotes.svg) no-repeat 5em top;
+        &__p{
+            margin-bottom: 1.5em;
+            font-size: $fontXL;
+            font-weight: $font300;
+            line-height: $fontXL*1.5;
+            color: $DarkBlue;
+        }
+        &__author {
+            display: flex;
+            &__h4 {
+                display: block;
+                font-size: $fontS;
+                font-weight: $font700;
+                margin-right: 0.3em;
+            }
+            &__span {
+                font-size: $fontS;
+                font-weight: $font500;
+                color: $GrayishBlue;
+            }
+        }
+    }
+    &__img{
+        order: 1;
+        position: relative;
+        width: 100%;
+        height: auto;
+        z-index: 10;
+        img {
+            width: 100%;
+            height: auto;
+            border-radius: 4px;
+            box-shadow: -4px 24px 21px 2px rgba(0,0,0,0.04);
+        }
+    }
+}
+
+.navigation {
+    &_testimonials {
+        position: absolute;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        list-style: none;
+        width: 100px;
+        z-index: 20;
+        bottom: -25px;
+        left: 70px;
+        background-color: $white;
+        border-radius: 25px;
+        box-shadow: 0px 15px 15px 0px rgba(0,0,0,0.04);
+        li {
+            padding: 1em 1.3em;
+            img{
+                width: 100%;
+                height: auto;
+                cursor: pointer;
+            }
+        }
+    }
+}
+
+
+
+.attribution {
+    position: absolute;
+    padding: 1em 0;
+    bottom: 0;
+    margin: auto;
+    font-size: $fontS;
+    font-weight: $font300;
+    color: $GrayishBlue;
+    a {
+        color: $DarkBlue;
+        text-decoration: none;
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        width: 100%;
+        height: 100vh;
+        font-family: $fontFamily;
+        background-color: $white;
+        background: url(/assets/images/pattern-curve.svg) no-repeat bottom left;
+        background-size: contain;
+    }
+
+    .testimonials {
+        position: relative;
+        flex-direction: column;
+        height: 100%;
+        &__content {
+            order:1;
+            justify-content: flex-start;
+            padding: 3em 2em;
+            height: 100%;
+            background: url(/assets/images/pattern-quotes.svg) no-repeat center top;
+            background-size: 80px;
+            &__p{
+                margin-bottom: 1.5em;
+                font-size: $fontS;
+                font-weight: $font300;
+                line-height: $fontS*1.5;
+                color: $DarkBlue;
+                text-align: center;
+            }
+            &__author {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                width: 100%;
+                text-align: center;
+                &__h4 {
+                    display: block;
+                    font-size: $fontS;
+                    font-weight: $font700;
+                    margin-bottom: 0.2em;
+                }
+                &__span {
+                    font-size: $fontS;
+                    font-weight: $font500;
+                    color: $GrayishBlue;
+                }
+            }
+        }
+        &__img {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 3em;
+            order: 0;
+            background: url(/assets/images/pattern-bg.svg) no-repeat center right;
+            background-size: contain;
+            
+        }
+    }
+    .navigation {
+        &_testimonials {
+            left: 0;
+            right: 0;
+            bottom: 10px;
+            margin: 0 auto;
+        }
+    }
+    .attribution {
+        padding: 1em;
+        text-align: center;
+    }
+}
